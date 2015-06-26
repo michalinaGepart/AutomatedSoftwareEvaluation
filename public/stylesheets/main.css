@@ -11,7 +11,7 @@ body, html {
 }
 
 body{
-    background-image: url(../images/background.jpg);
+    background-image: url(../images/background.png);
 }
 
 
@@ -76,9 +76,9 @@ body{
 }
 
 .content{
-    background-color: #CC9966;
+    background-color: #C8C8C8;
     border-style: solid;
-    border-width: 3px;
+    border-width: 2px;
     height:100%;
 
 }
@@ -86,4 +86,37 @@ body{
 .loginButton{
     float:right;
     margin-top:10px;
+}
+
+#div1 {
+    width:350px;
+    height:70px;
+    padding:10px;
+    border:2px solid #aaaaaa;
+    background-color:white;
+}
+
+table{
+    width:100%;
+}
+
+.rankingTable{
+    width:100%;
+    border:1px;
+    border-style: solid;
+    border-collapse: collapse;
+    background-color: white;
+
+}
+
+.rankingData{
+    border:1px;
+    border-style: solid;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+#firstRow{
+    text-align: center;
+    font-size: 150%;
 }

@@ -2,7 +2,121 @@
 
 @main("Welcome to Play") {
     <div class="container marketing content">
-        <h1>Test the quality of your code!</h1>
+        <div class="col-sm-6">
+            <h1>Test the quality of your code!</h1>
+        </div>
+        <div class="col-sm-6" ng-app="validationApp" ng-controller="mainController">
+
+            <h2>Sign up</h2>
+
+            <form id="registrationForm" name="registrationForm" ng-submit="submitForm()" novalidate>
+                <table id="registrationTable">
+                    <tr>
+                        <td>
+                                <!-- First name -->
+                            <div class="form-group" ng-class="{ 'has-error' : (registrationForm.firstname.$invalid && registrationForm.firstname.$touched) || (registrationForm.firstname.$invalid && submitted) }">
+                                <input type="text" name="firstname" placeholder="First name" class="form-control" ng-model="user.firstname" ng-minlength="2" ng-maxlength="15" required />
+                                <!--<p ng-show="(registrationForm.firstname.$invalid && registrationForm.firstname.$touched) || submitted" class="help-block">
+                                    <span class="error" ng-show="registrationForm.firstname.$error.required">
+                                        First name is required.</span>
+                                    <span class="error" ng-show="registrationForm.firstname.$error.minlength">
+                                        Your first name is required to be at least 2 characters.</span>
+                                    <span class="error" ng-show="registrationForm.firstname.$error.maxlength">
+                                        Your first name cannot be longer than 15 characters.</span>
+                                </p> -->
+                            </div>
+                        </td>
+                        <td width="50%">
+                                <!-- Last name -->
+                            <div class="form-group" ng-class="{ 'has-error' : (registrationForm.lastname.$invalid && registrationForm.lastname.$touched) || (registrationForm.lastname.$invalid && submitted) }">
+                                <input type="text" name="lastname" placeholder="Last name" class="form-control" ng-model="user.lastname" ng-minlength="2" ng-maxlength="15" required />
+                                <p ng-show="(registrationForm.lastname.$invalid && registrationForm.lastname.$touched) || submitted" class="help-block">
+                                  <!--  <span class="error" ng-show="registrationForm.lastname.$error.required">
+                                        Last name is required.</span>
+                                    <span class="error" ng-show="registrationForm.lastname.$error.minlength">
+                                        Your last name is required to be at least 2 characters.</span>
+                                    <span class="error" ng-show="registrationForm.lastname.$error.maxlength">
+                                        Your last name cannot be longer than 15 characters.</span> -->
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group" ng-class="{ 'has-error' : (registrationForm.email.$invalid && registrationForm.email.$touched) || (registrationForm.email.$invalid && submitted) }">
+                                <input type="email" name="email" placeholder="Email" class="form-control" ng-model="user.email" ng-minlength="3" ng-maxlength="20" required />
+                                <p ng-show="(registrationForm.email.$invalid && registrationForm.email.$touched) || submitted" class="help-block">
+                                 <!--   <span class="error" ng-show="registrationForm.email.$error.required">
+                                        Your email is required.</span>
+                                    <span class="error" ng-show="registrationForm.email.$error.email">
+                                        That is not a valid email. Please input a valid email.</span>
+                                    <span class="error" ng-show="registrationForm.email.$error.maxlength">
+                                        Your email cannot be longer than 20 characters.</span> -->
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group" ng-class="{ 'has-error' : (registrationForm.password.$invalid && registrationForm.password.$touched) || (registrationForm.password.$invalid && submitted) }">
+                                <input type="password" placeholder="Password" name="password" class="form-control" ng-model="user.password" ng-minlength="5" ng-maxlength="60" required/>
+                                <p ng-show="(registrationForm.password.$invalid && registrationForm.password.$touched) || submitted" class="help-block">
+                                 <!--   <span class="error" ng-show="registrationForm.password.$error.required">
+                                        A password is required.</span>
+                                    <span class="error" ng-show="registrationForm.password.$error.minlength">
+                                        Your password is required to be at least 5 characters.</span>
+                                    <span class="error" ng-show="registrationForm.password.$error.maxlength">
+                                        Your password cannot be longer than 60 characters.</span> -->
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input id="nextStepButton" class="btn btn-lg btn-primary btn-block" type="submit" value="Sign up" /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
+
+    <script>
+                    var validationApp = angular.module('validationApp', []);
+
+                    // AngularJS Controller for RegistrationFrom
+                    validationApp.controller('mainController', function($scope, $window, $http) {
+
+                    // Submit function for the form
+//                    $scope.submitForm = function() {
+//
+//                        $scope.submitted = true;
+//
+//
+//                        if ($scope.registrationForm.$valid) {
+//
+//                          // ToDo: Make it variable out of the routes
+//                          var url = "/person";
+//                          //console.log(url);
+//
+//                           $http({
+//                             method: 'POST',
+//                             data: {
+//                                firstname: $scope.user.firstname,
+//                                lastname: $scope.user.lastname,
+//                                email: $scope.user.email,
+//                                password: $scope.user.password
+//                                    },
+//                             url: url
+//                            })
+//                            .success(function (data, status, headers, config) {
+//                                // Redirect to next page
+//                                // ToDo: Make it variable out of the routes or redirect in the method itself which doesn't work in this way
+//                                $window.location=('/language');
+//                            })
+//                        }
+//                    };
+                });
+                </script>
+
 
 }

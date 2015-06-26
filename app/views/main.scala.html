@@ -40,10 +40,10 @@
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="#">Home</a></li>
+                                <li class="active"><a href="@routes.Application.index()">Home</a></li>
                                 <li><a href="@routes.Application.about()">About</a></li>
-                                <li><a href="">History</a></li>
-                                <li><a href="">Ranking</a></li>
+                                <li><a href="@routes.Application.history()">History</a></li>
+                                <li><a href="@routes.Application.ranking()">Ranking</a></li>
                                <!-- <li><a href="#contact">Contact</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -58,8 +58,17 @@
                                     </ul>
                                 </li> -->
                             </ul>
-                            <div>
-                                <button type="button" id="LogIn" class="btn btn-primary loginButton">Login</button>
+                            <div id="navbar" class="navbar-collapse collapse">
+                                <form id="loginForm" action="@routes.Application.authenticate()" method="POST" class="navbar-form navbar-right" role="form">
+                                    <div class="form-group">
+                                        <input id="email" class="form-control" type="email" name="email" placeholder="Email"  >
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="password" class="form-control" type="password" name="password" placeholder="Password"  >
+                                    </div>
+                                    <input id="loginButton" class="btn btn-primary" type="submit" value="Login" />
+                                </form>
+
                             </div>
                         </div>
 
@@ -74,6 +83,13 @@
 
 
         @content
+
+
+        <div class="container">
+            <footer>
+                <p>Michalina Gepart 2015 - <a href="#" title="Impressum">Impressum</a></p>
+            </footer>
+        </div>
 
 
 
