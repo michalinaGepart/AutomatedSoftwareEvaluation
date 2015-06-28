@@ -114,9 +114,14 @@ table{
     border-style: solid;
     border-collapse: collapse;
     background-color: white;
+    padding:5px;
 }
 
 #firstRow{
     text-align: center;
-    font-size: 150%;
+    font-size: 110%;
+}
+
+th#position{
+    width:10%;
 }
