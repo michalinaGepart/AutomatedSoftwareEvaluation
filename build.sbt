@@ -10,8 +10,7 @@ scalaVersion := "2.11.6"
 libraryDependencies ++= Seq(
   javaJdbc,
   cache,
-  javaWs,
-  "mysql" % "mysql-connector-java" % "5.1.26"
+  javaWs
  // "org.webjars" %% "webjars-play" % "2.3.0-2",
 //"org.webjars" % "bootstrap" % "3.3.4",
 //"org.webjars.bower" % "angular" % "1.4.0"
