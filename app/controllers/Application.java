@@ -39,4 +39,19 @@ public class Application extends Controller {
 
     }
 
+    public Result addPerson(){
+        Person person = Form.form(Person.class).bindFromRequest().get();
+
+     //   if(Person.find(person.email) == null){
+            person.save();
+
+            session().clear();
+            session("email", person.email);
+            session("personID", Integer.toString(person.id));
+
+            flash("Success", "Person " + person.firstName + " " + person.lastName  + "saved successfully.");
+
+     //   }
+        return ok();
+    }
 }

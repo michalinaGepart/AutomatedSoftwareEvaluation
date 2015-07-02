@@ -16,7 +16,11 @@ libraryDependencies ++= Seq(
 //"org.webjars.bower" % "angular" % "1.4.0"
 )
 
-
+// Hibernate Integration for JPA (Java Persistence API)
+libraryDependencies ++= Seq(
+    javaJpa.exclude("org.hibernate.javax.persistence", "hibernate-jpa-2.0-api"),
+    "org.hibernate" % "hibernate-entitymanager" % "4.3.8.Final" // replace by your jpa implementation
+    )
 
 
 // Play provides two styles of routers, one expects its actions to be injected, the
